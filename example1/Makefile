@@ -1,12 +1,9 @@
 all: arraySort
 
-EXTRA_CFLAGS = -DHAVE_LINUX_PERF_EVENT_H
+EXTRA_CFLAGS = -O3
 
-arraySort: arraySort.cpp perfstats.o 
-	g++ $(EXTRA_CFLAGS) arraySort.cpp perfstats.o -o arraySort
-
-perfstats.o: perfstats.c 
-	$(CC) $(CFLAGS) $(EXTRA_CFLAGS) perfstats.c -c 
+arraySort: arraySort.cpp 
+	g++ $(EXTRA_CFLAGS) arraySort.cpp -o arraySort
 
 clean:
 		rm -f arraySort 

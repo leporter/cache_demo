@@ -30,8 +30,11 @@ int main(int argc, char **argv)
     for(unsigned k = 0; k < 10000; k++){
         int threshold = std::rand();
         for (unsigned i = 0; i < array_size; ++i) {
-            if (data[i] >= threshold)
+            if (data[i] >= threshold){
                 sum++;
+		data[i]--;
+	    }
+	    data[i]++;
         }
     }
     std::cout << "sum = " << sum << std::endl;
